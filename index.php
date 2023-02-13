@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="index.css">
+
+    <script src="js/navHandler.js"></script>
     
     <title> Auth </title>
 </head>
@@ -18,7 +20,7 @@
     ?>
     <section class="index-login">
         
-        <article class="index-login-signup card has-background-light">
+        <form class="index-login-signup card has-background-light">
             <div class="index-login card-content">
               <h1 class="mb-3 is-size-4 has-text-grey">Sign up</h1>
             <div class="field">
@@ -65,7 +67,7 @@
                 <button class="button is-primary">Submit</button>
                 </div>
           </div>
-        </article>
+        </form>
     </section>
 
     <?php
