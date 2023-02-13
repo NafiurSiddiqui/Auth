@@ -13,11 +13,14 @@
 </head>
 <body>
 
+    <?php
+        include 'Layout/header.php';
+    ?>
     <section class="index-login">
         
         <article class="index-login-signup card has-background-light">
             <div class="index-login card-content">
-              <h1 class="mb-2 is-size-4 has-text-grey">Sign up</h1>
+              <h1 class="mb-3 is-size-4 has-text-grey">Sign up</h1>
             <div class="field">
                 <p class="control is-expanded has-icons-left">
                     <input class="input" type="text" placeholder="Name">
