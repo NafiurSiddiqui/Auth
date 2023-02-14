@@ -1,9 +1,10 @@
 
     <?php
-        include 'Layout/header.php';
-    ?>
+include 'Layout/header.php';
+?>
     <section class="index-login">
-        
+        <!-- signup -->
+
         <form class="index-login-signup card has-background-light">
             <div class="index-login card-content">
               <h1 class="mb-3 is-size-4 has-text-grey">Sign up</h1>
@@ -23,7 +24,7 @@
                     <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                     </span>
-                
+
                 </p>
             </div>
 
@@ -52,7 +53,7 @@
                 </div>
           </div>
         </form>
-
+         <!-- login -->
           <form class="index-login-login card has-background-light mt-4">
             <div class="index-login card-content">
               <h1 class="mb-3 is-size-4 has-text-grey">Login</h1>
@@ -76,17 +77,18 @@
                 </p>
             </div>
 
-       
+
 
             <div class="control mt-4">
                 <button class="button is-primary">Login</button>
                 </div>
           </div>
         </form>
+
     </section>
 
     <?php
-        // echo 'AUTH SYSTEM';
-    ?>
+// echo 'AUTH SYSTEM';
+?>
 </body>
 </html>
