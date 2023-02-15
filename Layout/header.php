@@ -10,11 +10,10 @@
     <link rel="stylesheet" href="index.css">
 
     <script src="js/navHandler.js"></script>
-    
+
     <title> Auth </title>
 </head>
 <body>
-
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">

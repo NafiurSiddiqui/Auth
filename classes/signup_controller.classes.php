@@ -1,6 +1,6 @@
 <?php
 
-class SignupController
+class SignupController extends Signup
 {
 
     private $name;
@@ -17,9 +17,48 @@ class SignupController
         $this->repass = $repass;
     }
 
-    //validate for empty inputs
+    //throw error
 
-    private function validate()
+    public function signupUser()
+    {
+
+        //empty input
+        if ($this->emptyInput() == false) {
+
+            header("location:../index.php?error=emptyinput");
+            exit();
+        }
+        //user validity
+        if ($this->nameValidation() == false) {
+
+            header("location:../index.php?error=invalidusername");
+            exit();
+        }
+        //email
+        if ($this->emailValidation() == false) {
+
+            header("location:../index.php?error=invalidemail");
+            exit();
+        }
+        //repass match
+        if ($this->repassValidation() == false) {
+
+            header("location:../index.php?error=passworddoesnotmatch");
+            exit();
+        }
+        //userName or pass exists
+        if ($this->userIsTaken() == false) {
+
+            header("location:../index.php?error=userAlreadyExistsBruh");
+            exit();
+        }
+
+        $this->setUser($this->name, $this->email, $this->pass);
+
+    }
+
+    //validate for empty inputs
+    private function emptyInput()
     {
 
         if (
@@ -43,7 +82,7 @@ class SignupController
 
             $nameIsValid = false;
         } else {
-            $this->name = filter_input($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
+            // $this->name = filter_input($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
             $nameIsValid = true;
         }
 
@@ -59,7 +98,7 @@ class SignupController
             $emailIsValid = false;
 
         } else {
-            $this->email = filter_input($_POST["email"], FILTER_SANITIZE_EMAIL);
+            // $this->email = filter_input($_POST["email"], FILTER_SANITIZE_EMAIL);
             $emailIsValid = true;
         }
 
@@ -75,6 +114,21 @@ class SignupController
         } else {
             $repassMatched = true;
         }
+
+        return $repassMatched;
+
+    }
+
+    private function userIsTaken()
+    {
+
+        if (!$this->checkUser($this->name, $this->email)) {
+            $userExists = false;
+        } else {
+            $userExists = true;
+        }
+
+        return $userExists;
 
     }
 

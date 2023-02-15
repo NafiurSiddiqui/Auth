@@ -1,11 +1,12 @@
 
     <?php
 include 'Layout/header.php';
+
 ?>
     <section class="index-login">
         <!-- signup -->
 
-        <form class="index-login-signup card has-background-light">
+        <form class="index-login-signup card has-background-light" action="includes/signup.inc.php" method="post" >
             <div class="index-login card-content">
               <h1 class="mb-3 is-size-4 has-text-grey">Sign up</h1>
             <div class="field">
@@ -41,7 +42,7 @@ include 'Layout/header.php';
             <!-- re-pass -->
             <div class="field">
                 <p class="control has-icons-left">
-                    <input class="input" type="password" placeholder="Repeat Password" name="passRepeat">
+                    <input class="input" type="password" placeholder="Repeat Password" name="repass">
                     <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                     </span>
@@ -49,7 +50,7 @@ include 'Layout/header.php';
             </div>
 
             <div class="control mt-4">
-                <button class="button is-primary">Submit</button>
+                <button type="submit" name="submit" class="button is-primary">Submit</button>
                 </div>
           </div>
         </form>
