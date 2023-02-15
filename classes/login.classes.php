@@ -7,14 +7,14 @@ class Login extends Dbh
 
     //check of recreation of data
 
-    private $loginData;
+    protected $loginData;
 
     protected function getUser($name, $pass)
     {
 
         $stmt = $this->connect()->prepare('SELECT user_pass FROM users WHERE user_name=? OR user_email= ?');
 
-        if (!$stmt->execute(array($name, $pass))) {
+        if (!$stmt->execute(array($name, $name))) {
             //if this fails, close the conn
 
             $stmt = null;
@@ -22,15 +22,18 @@ class Login extends Dbh
             exit(); //exit the entire script
         }
 
-        $this->loginData = $stmt->fetchAll(PDO::FETCH_ASSOC); //Param,  we say how we want the data to be returned.
+        // $this->loginData = $stmt->fetchAll(PDO::FETCH_ASSOC); //Param,  we say how we want the data to be returned.
 
-        if (count($this->loginData) == 0) {
+        $passHashed = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $checkPass = password_verify($pass, $passHashed[0]['user_pass']);
+        
+
+        if (count($passHashed) == 0) {
             $stmt = null;
             header("location:login.php?error=usernotfound");
             exit();
         }
 
-        $checkPass = password_verify($pass, $this->loginData[0]['user_pass']);
 
         if ($checkPass == false) {
             $stmt = null;
@@ -40,7 +43,7 @@ class Login extends Dbh
 
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE user_name = ? OR user_email = ? AND user_pass = ?;');
 
-            if (!$stmt->execute(array($name, $name, $pass))) {
+            if (!$stmt->execute(array($name, $name, $checkPass[0]['user_pass']))) {
                 //if this fails, close the conn
 
                 $stmt = null;
@@ -50,23 +53,27 @@ class Login extends Dbh
 
             //check for empty rows
 
-            if (count($this->loginData) == 0) {
+            if (count($passHashed) == 0) {
 
                 $stmt = null;
                 header('location:../index.php?error=noUsers');
                 exit();
             }
 
+            $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
             session_start();
 
-            $_SESSION["userid"] = $this->loginData[0]["user_id"];
-            $_SESSION["username"] = $this->loginData[0]["user_name"];
+            echo $_SESSION["name"];
+
+            $_SESSION["id"] = $user[0]["id"];
+            $_SESSION["name"] = $user[0]["user_name"];
 
             $stmt = null;
         }
 
         //Close the conn
-        $stmt = null;
+        // $stmt = null;
 
     }
 
