@@ -71,20 +71,21 @@ session_start();
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <?php
+            <?php
 if (isset($_SESSION["userid"])) {
- ?>
+
+	?>
           <a class="button is-primary">
             <?php
 echo $_SESSION["username"];
- ?>
+	?>
           </a>
           <a class="button is-light">
             Log in
           </a>
-          <?php
+              <?php
 } else {
- ?>
+	?>
              <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
