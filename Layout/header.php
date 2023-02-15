@@ -1,3 +1,9 @@
+<?php
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -65,12 +71,30 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
+          <?php
+if (isset($_SESSION["userid"])) {
+ ?>
           <a class="button is-primary">
+            <?php
+echo $_SESSION["username"];
+ ?>
+          </a>
+          <a class="button is-light">
+            Log in
+          </a>
+          <?php
+} else {
+ ?>
+             <a class="button is-primary">
             <strong>Sign up</strong>
           </a>
           <a class="button is-light">
             Log in
           </a>
+
+          <?php
+}
+?>
         </div>
       </div>
     </div>

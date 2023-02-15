@@ -3,16 +3,14 @@
 class LoginController extends login
 {
     private $name;
-
     private $pass;
 
     //construct
     public function __construct($name, $pass)
     {
         $this->name = $name;
-        $this->email = $email;
         $this->pass = $pass;
-        $this->repass = $repass;
+
     }
 
     //throw error

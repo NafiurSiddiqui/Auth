@@ -2,25 +2,25 @@
 
 if (isset($_POST["submit"])) {
 
-    //get the data
+ //get the data
 
-    $name = $_POST["name"];
-    $email = $_POST["email"];
-    $pass = $_POST["pass"];
-    $repass = $_POST["repass"];
+ $name = $_POST["name"];
+ $email = $_POST["email"];
+ $pass = $_POST["pass"];
+ $repass = $_POST["repass"];
 
-    //instantiat signup controller
+ //instantiat signup controller
 
-    include '../classes/dbh.classes.php';
-    include '../classes/signup.classes.php';
-    include '../classes/signup_controller.classes.php';
+ include '../classes/dbh.classes.php';
+ include '../classes/signup.classes.php';
+ include '../classes/signup_controller.classes.php';
 
-    $signup = new SignupController($name, $email, $pass, $repass);
+ $signup = new SignupController($name, $email, $pass, $repass);
 
-    //Error handler
-    $signup->signupUser();
+ //Error handler
+ $signup->signupUser();
 
-    //send to home
+ //send to home
 
-    header('location:../index.php?error=none');
+ header('location:../index.php?error=none');
 }

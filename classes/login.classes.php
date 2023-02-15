@@ -6,13 +6,13 @@ class Login extends Dbh
 {
 
     //check of recreation of data
-    private $sql = 'SELECT user_name FROM users WHERE user_name = ? OR user_email = ?;';
+
     private $loginData;
 
     protected function getUser($name, $pass)
     {
 
-        $stmt = $this->connect()->prepare('SELECT users_pass FROM users WHERE user_name=? OR user_email= ?');
+        $stmt = $this->connect()->prepare('SELECT user_pass FROM users WHERE user_name=? OR user_email= ?');
 
         if (!$stmt->execute(array($name, $pass))) {
             //if this fails, close the conn
@@ -40,7 +40,7 @@ class Login extends Dbh
 
             $stmt = $this->connect()->prepare('SELECT * FROM users WHERE user_name = ? OR user_email = ? AND user_pass = ?;');
 
-            if (!$stmt->execute(array($name, $name))) {
+            if (!$stmt->execute(array($name, $name, $pass))) {
                 //if this fails, close the conn
 
                 $stmt = null;
@@ -63,7 +63,6 @@ class Login extends Dbh
             $_SESSION["username"] = $this->loginData[0]["user_name"];
 
             $stmt = null;
-
         }
 
         //Close the conn
