@@ -1,14 +1,12 @@
 body {
 	background-color: rgb(231, 225, 181);
 	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
 }
 
-.navbar {
-	top: 0;
-	width: 100%;
-	position: absolute;
+.card {
+	min-height: 50vh;
+}
+
+i {
+	color: rgb(194, 195, 197);
 }

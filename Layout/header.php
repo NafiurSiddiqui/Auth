@@ -19,11 +19,11 @@
 
       <title> Auth </title>
   </head>
-  <body>
+  <body >
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <nav class="navbar " role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <a class="navbar-item" href="https://bulma.io">
+        <a class="navbar-item" href="../index.php">
           <img src="assets/logo.png" width="28" height="28">
           <p class="ml-1 has-text-weight-bold has-text-grey-dark is-size-5"> Angles Inc.</p>
         </a>

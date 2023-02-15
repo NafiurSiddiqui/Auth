@@ -2,10 +2,11 @@
     include './Layout/header.php';
 ?>
 
-    <section class="index-login">
-    <!-- signup -->
-
-        <form class="index-login-signup card has-background-light" action="includes/signup.inc.php" method="post">
+   <div class="hero-body">
+     <section class="index-login columns ">
+        <!-- signup -->
+        <div class="column is-align-items-flex-end">
+            <form class="index-login-signup card has-background-light" action="includes/signup.inc.php" method="post">
             <div class="index-login card-content">
                 <h1 class="mb-3 is-size-4 has-text-grey">Sign up</h1>
                 <div class="field">
@@ -53,8 +54,10 @@
                 </div>
             </div>
         </form>
+        </div>
         <!-- login -->
-        <form class="index-login-login card has-background-light mt-4" action="includes/login.inc.php" method="post">
+       <div class="column is-align-items-flex-end">
+         <form class="index-login-login card has-background-light" action="includes/login.inc.php" method="post">
             <div class="index-login card-content">
                 <h1 class="mb-3 is-size-4 has-text-grey">Login</h1>
                 <div class="field">
@@ -84,12 +87,12 @@
                 </div>
             </div>
         </form>
+       </div>
 
     </section>
+   </div>
 
-<?php
-// echo 'AUTH SYSTEM';
-?>
+
 </body>
 
 </html>
