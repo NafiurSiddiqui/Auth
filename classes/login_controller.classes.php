@@ -37,7 +37,7 @@ class LoginController extends login
     }
 
     if(!empty($this->name) || !empty($this->pass) || !empty($this->emptyInputs)){
-        header('location:../index.php?error=1emptyInputs'. urlencode($this->emptyInputs) . "&emptyName=". urlencode($this->emptyName ). "&emptyPass=". urlencode($this->emptyPass) );
+        header('location:../index.php?error=emptyInputs'. urlencode($this->emptyInputs) . "&emptyName=". urlencode($this->emptyName ). "&emptyPass=". urlencode($this->emptyPass) );
         exit();
     }
 

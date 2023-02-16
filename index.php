@@ -1,6 +1,7 @@
 <?php
     include './Layout/header.php';
-//  include './includes/login.inc.php';
+
+    // isset($_GET["error"])
 
 ?>
 
@@ -64,14 +65,20 @@
                 <h1 class="mb-3 is-size-4 has-text-grey">Login</h1>
                 <div class="field">
                     <div class="control is-expanded has-icons-left">
-                        <input class="input is-danger  " type="text" placeholder="Name" name="name">
+                        <input class="input 
+                        <?php
+                            echo isset($_GET['emptyName'])? "is-danger":null;
+                        ?>
+                        " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
                     </div>
 
                     <span>
-                       
+                        <?php
+                            echo isset($_GET['emptyName'])
+                        ?>
                     </span>
                 </div>
 
