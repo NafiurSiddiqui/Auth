@@ -1,6 +1,9 @@
 <?php
 
+require './classes/dbh.classes.php';
+
 //This makes sure, we can not manually get to these pages. (e.g - typing in the URL)
+
 
 class Login extends Dbh
 {
@@ -30,7 +33,7 @@ class Login extends Dbh
 
         if (count($passHashed) == 0) {
             $stmt = null;
-            header("location:login.php?error=usernotfound");
+            header("location:login.inc.php?error=usernotfound");
             exit();
         }
 

@@ -1,5 +1,7 @@
 <?php
     include './Layout/header.php';
+ 
+//    $loginErr = new LoginController($name, $pass)
 ?>
 
    <div class="hero-body">
@@ -62,7 +64,7 @@
                 <h1 class="mb-3 is-size-4 has-text-grey">Login</h1>
                 <div class="field">
                     <p class="control is-expanded has-icons-left">
-                        <input class="input" type="text" placeholder="Name" name="name">
+                        <input class="input is-danger  " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
