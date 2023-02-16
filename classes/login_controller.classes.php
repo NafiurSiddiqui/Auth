@@ -23,34 +23,24 @@ class LoginController extends login
     public function loginUser()
     {
         
-       // empty input
-        if ($this->emptyInputs()) {
-
-            
-            $emptyInputs= " ⚠️ Please provide your name and pass ⚠️";
-            header("location:../index.php?error=emptyinputs".urlencode($emptyInputs));
-            exit();
-
-        }
-
-         //empty name
+       if ($this->inputsAreEmpty()) {
+        $this->emptyInputs = " ⚠️ Please provide your name and pass ⚠️";
+    } else {
+        // check for empty name
         if ($this->nameIsEmpty()) {
-
-            header("location:../index.php?error=emptyName");
-            
-            // $this->emptyName = "⚠️ Please provide your name. ⚠️";
-            exit();
-
+            $this->emptyName = "⚠️ Please provide your name. ⚠️";
         }
-        //empty pass
+        // check for empty pass
         if ($this->loginPassIsEmpty()) {
-
-            header("location:../index.php?error=emptyPass");
-            
-            $this->emptyPass= "⚠️ Password is required ⚠️";
-            exit();
-
+            $this->emptyPass = "⚠️ Password is required ⚠️";
         }
+    }
+
+    if(!empty($this->name) || !empty($this->pass) || !empty($this->emptyInputs)){
+        header('location:../index.php?error=1emptyInputs'. urlencode($this->emptyInputs) . "&emptyName=". urlencode($this->emptyName ). "&emptyPass=". urlencode($this->emptyPass) );
+        exit();
+    }
+
 
         
 
@@ -59,11 +49,11 @@ class LoginController extends login
     }
 
     //validate for empty inputs
-    protected function emptyInputs()
+    protected function inputsAreEmpty()
     {
 
         if (
-            empty($this->name) ||
+            empty($this->name) &&
             empty($this->pass)
 
         ) {
