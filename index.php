@@ -1,7 +1,15 @@
 <?php
     include './Layout/header.php';
+    
+    if(isset($_GET["error"])){
 
-    // isset($_GET["error"])
+        if($_GET["error"]== 'emptyInputs'){
+
+            $emptyInputs = isset($_GET["emptyInputs"]) ? $_GET["emptyInputs"]:'';
+            $emptyName =  $_GET['emptyName'];
+            $emptyPass=$_GET['emptyPass'] ;
+        }
+    }
 
 ?>
 
@@ -67,7 +75,7 @@
                     <div class="control is-expanded has-icons-left">
                         <input class="input 
                         <?php
-                            echo isset($_GET['emptyName'])? "is-danger":null;
+                            echo $emptyName? "is-danger":null;
                         ?>
                         " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
@@ -77,7 +85,7 @@
 
                     <span>
                         <?php
-                            echo isset($_GET['emptyName'])
+                            echo !empty($emptyName)? $emptyName: null;
                         ?>
                     </span>
                 </div>
@@ -85,11 +93,21 @@
 
                 <!-- pass -->
                 <div class="field">
-                    <p class="control has-icons-left">
-                        <input class="input" type="password" placeholder="Password" name="pass">
+                    <div class="control has-icons-left">
+                        <input class="input 
+                         <?php
+                            echo $emptyPass? "is-danger":null;
+                        ?>
+                        " type="password" placeholder="Password" name="pass">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
                         </span>
+                    </div>
+
+                    <p>
+                        <?php
+                            echo !empty($emptyPass)? $emptyPass: null;
+                        ?>
                     </p>
                 </div>
 

@@ -1,7 +1,5 @@
 <?php
 
-
-
 class LoginController extends login
 {
     private $name;
