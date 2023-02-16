@@ -1,6 +1,6 @@
 <?php
 
-require './classes/dbh.classes.php';
+ 
 
 //This makes sure, we can not manually get to these pages. (e.g - typing in the URL)
 

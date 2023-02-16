@@ -6,6 +6,7 @@ if (isset($_POST["submit"])) {
 	$name = $_POST["name"];
 	$pass = $_POST["pass"];
 
+
 	//instantiat signup controller
 
 	include '../classes/dbh.classes.php';
@@ -13,6 +14,8 @@ if (isset($_POST["submit"])) {
 	include '../classes/login_controller.classes.php';
 
 	$login = new loginController($name, $pass);
+
+	$nameErr = $login->emptyName;
 
 	//Error handler
 	$login->loginUser();

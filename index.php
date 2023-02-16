@@ -1,7 +1,7 @@
 <?php
     include './Layout/header.php';
- 
-//    $loginErr = new LoginController($name, $pass)
+//  include './includes/login.inc.php';
+
 ?>
 
    <div class="hero-body">
@@ -63,12 +63,16 @@
             <div class="index-login card-content">
                 <h1 class="mb-3 is-size-4 has-text-grey">Login</h1>
                 <div class="field">
-                    <p class="control is-expanded has-icons-left">
+                    <div class="control is-expanded has-icons-left">
                         <input class="input is-danger  " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
-                    </p>
+                    </div>
+
+                    <span>
+                       
+                    </span>
                 </div>
 
 

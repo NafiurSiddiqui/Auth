@@ -1,6 +1,6 @@
 <?php
 
-require './classes/login.classes.php';
+
 
 class LoginController extends login
 {
@@ -24,14 +24,14 @@ class LoginController extends login
     {
         
         //empty input
-        if (!$this->emptyInput()) {
+        // if (!$this->emptyInput()) {
 
-            header("location:../index.php?error=emptyinputs");
+        //     header("location:../index.php?error=emptyinputs");
             
-            $this->emptyInputs= " ⚠️ Please provide your name and pass ⚠️";
-            exit();
+        //     $this->emptyInputs= " ⚠️ Please provide your name and pass ⚠️";
+        //     exit();
 
-        }
+        // }
 
          //empty name
         if (!$this->nameIsEmpty()) {
@@ -43,11 +43,11 @@ class LoginController extends login
 
         }
         //empty pass
-        if (!$this->nameIsEmpty()) {
+        if ($this->loginPassIsEmpty()) {
 
             header("location:../index.php?error=emptyNames");
             
-            $this->emptyName = "⚠️ Please provide your pass. ⚠️";
+            $this->emptyPass= "⚠️ Password is required ⚠️";
             exit();
 
         }
