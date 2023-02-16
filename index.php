@@ -75,7 +75,7 @@
                     <div class="control is-expanded has-icons-left">
                         <input class="input 
                         <?php
-                            echo $emptyName? "is-danger":null;
+                            echo $emptyName || $emptyInputs? "is-danger":null;
                         ?>
                         " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
@@ -83,11 +83,11 @@
                         </span>
                     </div>
 
-                    <span>
+                     <p class="mt-2 is-size-7 has-text-danger">
                         <?php
                             echo !empty($emptyName)? $emptyName: null;
                         ?>
-                    </span>
+                    </p>
                 </div>
 
 
@@ -103,12 +103,12 @@
                             <i class="fas fa-lock"></i>
                         </span>
                     </div>
-
-                    <p>
-                        <?php
-                            echo !empty($emptyPass)? $emptyPass: null;
+                       
+                    <p class="mt-2 is-size-7 has-text-danger "> <?php
+                            echo !empty($emptyPass)? $emptyPass : null;
                         ?>
                     </p>
+                    
                 </div>
 
 

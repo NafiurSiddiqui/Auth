@@ -22,15 +22,15 @@ class LoginController extends login
     {
         
        if ($this->inputsAreEmpty()) {
-        $this->emptyInputs = " ⚠️ Please provide your name and pass ⚠️";
+        $this->emptyInputs = " ⚠️ Please provide your name and pass";
     } else {
         // check for empty name
         if ($this->nameIsEmpty()) {
-            $this->emptyName = "⚠️ Please provide your name. ⚠️";
+            $this->emptyName = "⚠️ Name is required. ";
         }
         // check for empty pass
         if ($this->loginPassIsEmpty()) {
-            $this->emptyPass = "⚠️ Password is required ⚠️";
+            $this->emptyPass = "⚠️ Password is required ";
         }
     }
 
