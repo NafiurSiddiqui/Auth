@@ -22,5 +22,6 @@ if (isset($_POST["submit"])) {
 
 	//send to home
 
-	header('location:../index.php?message=loginSuccessful');
+	// header('location:../index.php?message=loginSuccessful');
+	header('location:../user.php?message=loginSuccessful');
 }
