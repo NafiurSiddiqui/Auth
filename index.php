@@ -5,10 +5,7 @@
 
             $emptyName = isset($_GET['emptyName'])? $_GET["emptyName"]: '' ;
             $emptyPass= isset($_GET["emptyPass"])? $_GET['emptyPass'] :'' ;
-            // $emptyInput = isset($_GET["emptyinput"]) ? $_GET["emptyinput"]:'';
-
-            
-       
+            $emptyInput = $_GET['error'];
     }
 
 ?>
@@ -64,8 +61,8 @@
 
                  <p class="mt-2 is-size-7 has-text-danger">
                         <?php
-                            // echo !empty($emptyInput)? $emptyInput: null;
-                            var_dump($emptyInput);
+                            echo !empty($emptyInput)? "Each filed is required!": null;
+                          
                            
                         ?>
                     </p>

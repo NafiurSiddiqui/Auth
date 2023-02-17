@@ -22,5 +22,5 @@ if (isset($_POST["submit"])) {
 
  //send to home
 
- header('location:../index.php?error=none');
+ header('location:../index.php?error=signupSucceed');
 }
