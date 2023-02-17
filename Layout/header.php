@@ -15,7 +15,8 @@
 
       <link rel="stylesheet" href="style.css">
 
-      <script src="js/navHandler.js"></script>
+      <script defer src="js/navHandler.js"></script>
+      <script defer src="js/modal.js"></script>
 
       <title> Auth </title>
   </head>
