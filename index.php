@@ -3,8 +3,8 @@
     
     if(isset($_GET["error"])){
 
-            $emptyName =  $_GET['emptyName'];
-            $emptyPass=$_GET['emptyPass'] ;
+            $emptyName = isset($_GET['emptyName'])? $_GET["emptyName"]: '' ;
+            $emptyPass= isset($_GET["emptyPass"])? $_GET['emptyPass'] :'' ;
        
     }
 
