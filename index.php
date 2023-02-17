@@ -5,12 +5,17 @@
 
             $emptyName = isset($_GET['emptyName'])? $_GET["emptyName"]: '' ;
             $emptyPass= isset($_GET["emptyPass"])? $_GET['emptyPass'] :'' ;
+            // $emptyInput = isset($_GET["emptyinput"]) ? $_GET["emptyinput"]:'';
+
+            
        
     }
 
 ?>
 
-   <div class="hero-body">
+
+
+   <div class="hero-body ">
      <section class="index-login columns ">
         <!-- signup -->
         <div class="column is-align-items-flex-end">
@@ -57,6 +62,14 @@
                     </p>
                 </div>
 
+                 <p class="mt-2 is-size-7 has-text-danger">
+                        <?php
+                            // echo !empty($emptyInput)? $emptyInput: null;
+                            var_dump($emptyInput);
+                           
+                        ?>
+                    </p>
+
                 <div class="control mt-4">
                     <button type="submit" name="submit" class="button is-primary">Submit</button>
                 </div>
@@ -72,7 +85,7 @@
                     <div class="control is-expanded has-icons-left">
                         <input class="input 
                         <?php
-                            echo $emptyName ?'is-danger': null;
+                            echo !empty($emptyName) ?'is-danger': null;
                      
                         ?>
                         " type="text" placeholder="Name" name="name">
@@ -92,11 +105,13 @@
 
                 <!-- pass -->
                 <div class="field">
+                 
                     <div class="control has-icons-left">
-                        <input class="input 
+                        <input class="input
                          <?php
-                            echo $emptyPass? "is-danger":null;
+                            echo !empty($emptyPass)? "is-danger":null;
                         ?>
+                       
                         " type="password" placeholder="Password" name="pass">
                         <span class="icon is-small is-left">
                             <i class="fas fa-lock"></i>
