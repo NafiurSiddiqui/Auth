@@ -5,7 +5,9 @@
 
             $emptyName = isset($_GET['emptyName'])? $_GET["emptyName"]: '' ;
             $emptyPass= isset($_GET["emptyPass"])? $_GET['emptyPass'] :'' ;
-            $emptyInput = $_GET['error'];
+            $emptyInput = $_GET['error'] == 'emptyinput'? $_GET['error']: '';
+            $invalidUserName = $_GET['error'] == 'invalidusername'? $_GET['error']: '';
+            $passMismatched = $_GET['error'] == 'passworddoesnotmatch'? $_GET['error']: '';
     }
 
 ?>
@@ -25,6 +27,13 @@
                         <span class="icon is-small is-left">
                             <i class="fas fa-user"></i>
                         </span>
+                    </p>
+                    <p class="mt-2 is-size-7 has-text-danger">
+                        <?php
+                            echo !empty($invalidUserName)? "Invalid UserName. Allowed [a-z, 0-9]": null;
+                          
+                           
+                        ?>
                     </p>
                 </div>
 
@@ -57,11 +66,18 @@
                             <i class="fas fa-lock"></i>
                         </span>
                     </p>
+                      <p class="mt-2 is-size-7 has-text-danger">
+                        <?php
+                            echo !empty($passMismatched)? "password does not match!": null;
+                          
+                           
+                        ?>
+                    </p>
                 </div>
 
                  <p class="mt-2 is-size-7 has-text-danger">
                         <?php
-                            echo !empty($emptyInput)? "Each filed is required!": null;
+                            echo !empty($emptyInput)? $emptyInput : null;
                           
                            
                         ?>
