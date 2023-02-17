@@ -20,8 +20,6 @@ if (isset($_POST["submit"])) {
 	//Error handler
 	$login->loginUser();
 
-	//send to home
-
-	// header('location:../index.php?message=loginSuccessful');
+	//send to userPage
 	header('location:../user.php?message=loginSuccessful');
 }

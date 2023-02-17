@@ -89,10 +89,10 @@
                      {
 
                    ?>
-                <a class="button is-primary">
+                <a href="index.php" class="button is-primary">
                 <strong>Sign up</strong>
               </a>
-              <a class="button is-light">
+              <a href="index.php" class="button is-light">
                 Log in
               </a>
 

@@ -76,7 +76,7 @@ class Login extends Dbh
         }
 
         //Close the conn
-        // $stmt = null;
+        $stmt = null;
 
     }
 
