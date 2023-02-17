@@ -3,12 +3,9 @@
     
     if(isset($_GET["error"])){
 
-        if($_GET["error"]== 'emptyInputs'){
-
-            $emptyInputs = isset($_GET["emptyInputs"]) ? $_GET["emptyInputs"]:'';
             $emptyName =  $_GET['emptyName'];
             $emptyPass=$_GET['emptyPass'] ;
-        }
+       
     }
 
 ?>
@@ -75,7 +72,8 @@
                     <div class="control is-expanded has-icons-left">
                         <input class="input 
                         <?php
-                            echo $emptyName || $emptyInputs? "is-danger":null;
+                            echo $emptyName ?'is-danger': null;
+                     
                         ?>
                         " type="text" placeholder="Name" name="name">
                         <span class="icon is-small is-left">
@@ -86,6 +84,7 @@
                      <p class="mt-2 is-size-7 has-text-danger">
                         <?php
                             echo !empty($emptyName)? $emptyName: null;
+                           
                         ?>
                     </p>
                 </div>
